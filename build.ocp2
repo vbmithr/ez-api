@@ -11,8 +11,17 @@ Sys = { file_exists = Sys_file_exists };
 
 oflags = [ "-w"; "+a-48-4" ];
 
-ocaml.bytecomp = oflags;
-ocaml.asmcomp = oflags;
+try {
+  ocaml.bytecomp += oflags;
+} catch ("unknown-field",var) {
+    ocaml.bytecomp = oflags;
+ }
+
+try {
+  ocaml.asmcomp += oflags;
+} catch ("unknown-field",var) {
+    ocaml.asmcomp = oflags;
+ }
 
 include "autoconf/config.ocp2gen";
 ocaml.version = autoconf.package_version;
