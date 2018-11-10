@@ -1,5 +1,4 @@
-_obuild/
+_build/
+*.install
+**/*.merlin
 *~
-
-# this file can be used by the user to set variables
-ocp-autoconf.d/build.config

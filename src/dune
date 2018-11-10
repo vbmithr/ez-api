@@ -1,0 +1,31 @@
+(library
+ (name        ez_api)
+ (public_name ez-api)
+ (libraries  ocplib-compat ocplib-lang ocplib-json-typed ezjsonm lwt)
+ (modules Resto1 RestoDirectory1 EzDebug EzUrl EzAPI EzEncoding EzRequest EzSession)
+ (wrapped false)
+ (synopsis ""))
+
+(library
+ (name        ez_api_server)
+ (public_name ez-api-server)
+ (libraries  ez-api geoip lwt_log cohttp-lwt-unix)
+ (modules GMTime Timings EzCookieServer EzAPIServer EzSessionServer)
+ (wrapped false)
+ (synopsis ""))
+
+(library
+ (name        ez_api_session_client)
+ (public_name ez-api-session-client)
+ (libraries  ez-api)
+ (modules EzSessionClient)
+ (wrapped false)
+ (synopsis ""))
+
+(library
+ (name        ez_api_cohttp)
+ (public_name ez-api-cohttp)
+ (libraries  cohttp-lwt-unix ez-api)
+ (modules EzCohttp)
+ (wrapped false)
+ (synopsis ""))

@@ -1,0 +1,7 @@
+(executable
+ (name        main_cohttp)
+ (public_name ez-api-cohttp)
+ (flags      -w -6-9)
+ (modules    Test Main_cohttp)
+ (package    ez-api-cohttp)
+ (libraries  ez-api-server ez-api-session-client ez-api-cohttp))

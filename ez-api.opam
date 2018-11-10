@@ -1,0 +1,17 @@
+opam-version: "2.0"
+maintainer: "OCamlPro <contact@ocamlpro.com>"
+authors: [
+  "Cagdas Bozman <cagdas.bozman@ocamlpro.com>"
+  "Michael Laporte <michael.laporte@ocamlpro.com>"
+  "Fabrice Le Fessant <fabrice.le_fessant@ocamlpro.com>"
+]
+homepage: "http://tezos.ocamlpro.com/"
+dev-repo: "git+https://github.com/OCamlPro/ez-api.git"
+bug-reports: "https://github.com/OCamlPro/ez-api/issues"
+build: [ "dune" "build" "-j" jobs "-p" name "@install" ]
+depends: [
+  "ocaml" {>= "4.03.0"}
+  "dune" {build & > "1.0.1"}
+  "ezjsonm"
+  "ocplib-json-typed"
+]
